@@ -37,9 +37,10 @@ const Form = styled.form`
     grid-area: 3 / 2 / 5 / 6;
   }
   & button {
+    background:radial-gradient(rgba(255,0,0,0),rgba(255,0,0,1));
     grid-area: 7/ 3 / 11 / 5;
     &:hover {
-      background-color:darkred;
+      background:radial-gradient(rgba(255,0,0,1),rgba(255,0,0,0));
     }
     
   }

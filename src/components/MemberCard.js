@@ -8,6 +8,7 @@ const Card = styled.div`
   margin: 2% auto 2% auto;
   border-radius: 8px;
   & h2 {
+    font-size:1em;
     display: flex;
     align-items: center;
   }
