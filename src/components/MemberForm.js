@@ -10,6 +10,11 @@ const Form = styled.form`
   grid-template-rows: repeat(10, 0.3fr);
   grid-column-gap: 2%;
   grid-row-gap: 0.2em;
+  & input {
+    text-align:center;
+    font-weight:700;
+    background:radial-gradient(rgba(255,0,0,0),rgba(255,0,0,1));
+  }
   & label:nth-of-type(1) {
     grid-area: 2 / 1 / 3 / 2;
   }
@@ -26,6 +31,9 @@ const Form = styled.form`
     grid-area: 5 / 2 / 7 / 6;
   }
   & select {
+    font-weight:700;
+    text-align:center;
+    background:radial-gradient(rgba(255,0,0,0),rgba(255,0,0,1));
     grid-area: 3 / 2 / 5 / 6;
   }
   & button {
@@ -34,6 +42,9 @@ const Form = styled.form`
       background-color:darkred;
     }
     
+  }
+  & option:first-of-type {
+    color: lightgrey;
   }
 `;
 
@@ -59,41 +70,6 @@ const MemberForm = (props) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
   return (
-    // <Form onSubmit={(e) => handleSubmit(e)}>
-    //   <label>
-    //     Name:
-    //     <input
-    //       name="name"
-    //       id="memberName"
-    //       type="text"
-    //       maxLength="30"
-    //       placeholder="Team Member Name"
-    //       onChange={(e) => handleChange(e)}
-    //     ></input>
-    //   </label>
-    //   <label>
-    //     Role:
-    //     <select name="role" id="memberRole" onChange={(e) => handleChange(e)}>
-    //       <option value="Front End">Front End</option>
-    //       <option value="Back End">Back End</option>
-    //       <option value="Full Stack">Full Stack</option>
-    //       <option value="UX">UX</option>
-    //       <option value="Propagandist">Propagandist</option>
-    //     </select>
-    //   </label>
-    //   <label>
-    //     E-Mail:
-    //     <input
-    //       type="email"
-    //       name="email"
-    //       id="mEmail"
-    //       maxLength="30"
-    //       placeholder="Email Address"
-    //       onChange={(e) => handleChange(e)}
-    //     />
-    //   </label>
-    //   <button>Join the Team!</button>
-    // </Form>
     <Form onSubmit={(e) => handleSubmit(e)}>
       <label for="memberName">Name:</label>
       <input
@@ -107,7 +83,8 @@ const MemberForm = (props) => {
 
       <label for="memberRole">Role:</label>
 
-      <select name="role" id="memberRole" onChange={(e) => handleChange(e)}>
+      <select name="role" id="memberRole"  onChange={(e) => handleChange(e)}>
+        <option  id="roleHeader" selected disabled hidden>Role</option>
         <option value="Front End">Front End</option>
         <option value="Back End">Back End</option>
         <option value="Full Stack">Full Stack</option>
