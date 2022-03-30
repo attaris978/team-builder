@@ -5,7 +5,7 @@ const Card = styled.div`
   background-color: lightgrey;
   display:flex;
   justify-content:space-around;
-  margin:2% auto 0 auto;
+  margin:2% auto 2% auto;
   border-radius:8px;
   & h2 {
       display:flex;
@@ -13,6 +13,15 @@ const Card = styled.div`
   }
   & h2 i{
       font-size:.5em;
+  }
+  & h2:nth-of-type(1) {
+      width:30%;
+  }
+  & h2:nth-of-type(2) {
+      width:20%;
+  }
+  & h2:nth-of-type(3) {
+      width:50%;
   }
 `;
 const MemberCard = (props) => {
