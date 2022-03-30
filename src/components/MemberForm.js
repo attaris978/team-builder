@@ -9,21 +9,18 @@ const Form = styled.form`
 `;
 
 const MemberForm = (props) => {
-  const { add, currentLength } = props;
+  const { add } = props;
   const [formValues, setFormValues] = useState({
     name: "",
     role: "Full Stack",
     email: "",
   });
   const handleSubmit = (e) => {
-    console.log(formValues);
     e.preventDefault();
     add(formValues);
   };
   const handleChange = (e) => {
-    console.log(e.target.value);
-    setFormValues({...formValues, [e.target.name]: e.target.value});
-    console.log(formValues);
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
   return (
     <Form onSubmit={(e) => handleSubmit(e)}>
@@ -48,15 +45,16 @@ const MemberForm = (props) => {
           <option value="Propagandist">Propagandist</option>
         </select>
       </label>
-      <label>E-Mail:
-          <input
+      <label>
+        E-Mail:
+        <input
           type="email"
           name="email"
           id="mEmail"
           maxLength="30"
           placeholder="Email Address"
           onChange={(e) => handleChange(e)}
-          />
+        />
       </label>
       <button>Join the Team!</button>
     </Form>

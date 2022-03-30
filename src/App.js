@@ -1,7 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
-import MemberCard from "./components/MemberCard";
 import MemberForm from "./components/MemberForm";
 import MemberCards from "./components/MemberCards";
 
@@ -27,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <h1>The Dream Team</h1>
-      <MemberForm add={addToTeamList} currentLength={teamList.length} />
+      <MemberForm add={addToTeamList} />
       <MemberCards memberList={teamList} />
     </div>
   );
